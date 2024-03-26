@@ -1,3 +1,4 @@
+import Labs.Lab4;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
@@ -6,7 +7,7 @@ public class FunctionTest {
 
     @Test
     public void testCalculate() {
-        Labs.Lab2 function = new Labs.Lab2(2.4);
+        Lab4 function = new Lab4(2.4);
         double xStart = 1.0;
         double xEnd = 5.0;
         double step = 0.01;

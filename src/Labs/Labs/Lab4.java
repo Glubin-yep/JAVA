@@ -1,10 +1,10 @@
 package Labs;
-public class Lab2 {
+public class Lab4 {
     private final double a;
     private double[] x;
     private double[] y;
 
-    public Lab2(double a) {
+    public Lab4(double a) {
         this.a = a;
     }
 
@@ -75,6 +75,16 @@ public class Lab2 {
 
     public double getAverage() {
         return getSum() / y.length;
+    }
+
+    public  int getTask4(int minIndex) {
+        int result = 0;
+        for (int i = y.length -1; i >= minIndex; i--){
+            if(y[i] > 0){
+                result += 1;
+            }
+        }
+        return result;
     }
 }
 
