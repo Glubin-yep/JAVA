@@ -1,35 +1,27 @@
+import Labs.Lab2;
+
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
 public class Main {
-    public class Main {
-
         public static void main(String[] args) {
-            final double a = 2.4;
-            final double u = 0.14;
-            final double xMin = 1.0;
-            final double xMax = 5.0;
-            final double dx = 0.01;
+            double a = 2.4;
+            double xStart = 1.0;
+            double xEnd = 5.0;
+            double step = 0.01;
 
-            int n = (int) Math.ceil((xMax - xMin) / dx);
-            double[] y = new double[n];
+            Labs.Lab2 function = new Lab2(a);
+            function.createArrays(xStart, xEnd, step);
 
-            for (int i = 0; i < n; i++) {
-                double x = xMin + i * dx;
-                if (x > a) {
-                    y[i] = x * Math.sqrt(x - a);
-                } else if (x == a) {
-                    y[i] = x * Math.sin(a * x);
-                } else {
-                    y[i] = Math.exp(-u * x) * Math.cos(a * x);
-                }
-            }
+            int maxIndex = function.findMaxIndex();
+            int minIndex = function.findMinIndex();
 
-            // Вивід результатів на екран
-            for (double value : y) {
-                System.out.println(value);
-            }
+            System.out.println("Найбільше значення: y[" + maxIndex + "] = " + function.getY()[maxIndex] + " при x = " + function.getX()[maxIndex]);
+            System.out.println("Найменше значення: y[" + minIndex + "] = " + function.getY()[minIndex] + " при x = " + function.getX()[minIndex]);
+
+            System.out.println("Сума: " + function.getSum());
+            System.out.println("Середнє арифметичне: " + function.getAverage());
         }
-    }
+
 
 }
